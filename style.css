@@ -1,0 +1,110 @@
+* , *::after, *::before {
+    box-sizing: border-box;
+}
+body{
+    padding: 0;
+    margin: 0;
+    background-color: rgb(161, 161, 159);
+    
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    align-items: center;
+justify-content: center;
+display: flex;
+min-height: 100vh;
+overflow: hidden;
+}
+
+.clockface{
+    width: 250px;
+    height: 250px;
+    background-color: rgba(288, 288, 288, .8);
+    border:2px solid rgb(0, 0, 0);
+    position: relative;
+    border-radius: 50%;
+}
+/*.hour{
+    width: 100px;
+    height: 5px;
+    background-color: white;
+    position: relative;
+    top: 100px;
+}*/
+.clockface .number{
+    --rotation: 0;
+    position: absolute; /*absolutely relative the clockface*/
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  /*  transform: rotate(30deg);*/
+  transform: rotate(var(--rotation));
+  font-size: 1.5rem;
+}
+.clockface .number1{--rotation:30deg;}
+.clockface .number2{--rotation:60deg;}
+.clockface .number3{--rotation:90deg;}
+.clockface .number4{--rotation:120deg;}
+.clockface .number5{--rotation:150deg;}
+.clockface .number6{--rotation:180deg;}
+.clockface .number7{--rotation:210deg;}
+.clockface .number8{--rotation:240deg;}
+.clockface .number9{--rotation:270deg;}
+.clockface .number10{--rotation:300deg;}
+.clockface .number11{--rotation:330deg;}
+.clockface .number12{--rotation:360deg;}
+
+.clockface .hand{
+    --rotation: 0;
+position: absolute;
+bottom: 50%;
+border: 1px solid rgb(241, 184, 184);
+border-top-left-radius: 10px;
+border-top-right-radius: 10px ;
+left: 50%;
+z-index: 10;
+transform-origin: bottom;
+transform: translateX(-50%)/*translate it backward*/
+ rotate(calc(var(--rotation) * 1deg));
+}
+.clockface::after{
+    content: '';
+    position: absolute;
+    background-color: black;
+    z-index: 12;
+    width: 12px;
+    height: 12px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+.clockface .hand.minute{
+width: 7px;
+height: 100px;
+background-color: black;
+}
+.clockface .hand.hour{
+    width: 5px;
+    height: 70px;
+    background-color: rgb(245, 122, 122);
+    }
+ .clockface .hand.second {
+        width: 2px;
+        height: 100px;
+        background-color: rgb(129, 0, 0);
+        }
+
+/*THANK YOUUUUU!!!!!*/
+
+
+
+
+
+
+
+
+
+
+
+
+
